@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 void main() {
   // VAR
   // Jab aap var use karte ho, to value baad mein change kar sakte ho.
@@ -18,7 +20,29 @@ void main() {
   const pi = 3.14;
   // Constant (hamesha fix)
 
-  print(pi);
+  // Explain null safety in Dart
+  String? names;
+  if (names != null) {
+    print(names.length);
+  }
+  void process(String? namess) {
+    if (namess == null) {
+      return;
+    }
+    // Dart knows name is non-null here
+    print(namess); // ✅ No error, no ! needed
+  }
+  // 3. What are the differences between List, Set, and Map?
+
+  List<String> fruits = ['Apple', 'Banana', 'Mango', 'Orange'];
+  List<int> numbers = [1, 2, 3, 2, 1];
+
+  // print(fruits.remove("Banana"));
+  var fruitscount = fruits.every(
+    (element) => element.startsWith("a".toUpperCase()),
+  );
+
+  print(fruitscount);
 }
 
 // Short yaad rakhne ka tareeqa:
